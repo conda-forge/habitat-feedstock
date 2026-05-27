@@ -1,5 +1,5 @@
 context:
-  version: "0.3.0"
+  version: "0.4.0"
 
 package:
   name: habitat
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/earendil-works/absurd/archive/refs/tags/${{ version }}.tar.gz
-  sha256: 7ccf4bb1acca59101ad833cce3146965de84b913521046506c14d79a3848fed1
+  sha256: 98cdf6c7aa56e23e1ab9db96b674d8d2abd4ea0d34b574fcce19d5e82ecb0b67
   target_directory: src
 
 build:
-  number: 1
+  number: 0
   # The UI build fails on Windows
   skip: win
   script:
