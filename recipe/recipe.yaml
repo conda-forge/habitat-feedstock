@@ -16,6 +16,10 @@ build:
   skip: win
   script:
     - cd src/habitat/ui
+    # pnpm ignores the build scripts of dependencies unless they are explicitly
+    # allowed. esbuild (used by vite) needs its postinstall step to set up its
+    # platform specific binary.
+    - "printf 'allowBuilds:\\n  esbuild: true\\n' > pnpm-workspace.yaml"
     - pnpm install
     - pnpm build
     - pnpm-licenses generate-disclaimer --prod --output-file=../../../third-party-licenses.txt
